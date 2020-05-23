@@ -39,6 +39,10 @@ body {
     font-size: 10px;
 }
 
+.refresh-sms {
+    display: none;
+}
+
 .table, 
 .table tbody {
    width: 100%;

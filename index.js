@@ -67,13 +67,22 @@ class TicTacToe {
     announceWinner() {
         if(this.winner() == this.human) {
             alert(`waw ${this.human}'s won.\nreload the window to start over`);
-            //window.location.reload();
+            this.disableButtons();
         }else if(this.winner() == this.computer) {
             alert(`waw ${this.computer} won.\nreload the window to start over`);
-            //window.location.reload();
+            this.disableButtons();
         }else if(this.winner() == this._TIE) {
             alert(`Nobody won, it's a tie.\nreload the window to start over`);
+            this.disableButtons();
         }
+    }
+
+    disableButtons() {
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.disabled = true;
+        });
+        
+        document.querySelector(".refresh-sms").style.display = "block";
     }
 
     computerMovePlay() {
